@@ -764,6 +764,185 @@ input, select, textarea {
 
 .toast-close:hover { opacity: 1; }
 
+/* =============== POSTS PAGE =============== */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(52, 52, 52, 0.09);
+}
+
+.post-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.badge-platform {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.badge-status {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.post-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.post-card-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.post-card-footer {
+  margin-top: auto;
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--border);
+}
+
+.post-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.post-meta-item {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* =============== ANALYTICS PAGE =============== */
+.analytics-card {
+  padding: var(--spacing-lg);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--border);
+}
+
+.chart-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: var(--spacing-lg);
+}
+
+.chart-svg {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.chart-bar {
+  transition: filter 0.15s ease;
+}
+
+.chart-bar:hover {
+  filter: brightness(0.9);
+}
+
+.chart-line {
+  transition: stroke 0.15s ease;
+}
+
+.chart-area {
+  transition: fill-opacity 0.15s ease;
+}
+
+.chart-dot {
+  transition: r 0.15s ease, stroke-width 0.15s ease;
+  cursor: pointer;
+}
+
+.chart-dot:hover {
+  stroke-width: 4;
+}
+
+.chart-table-wrapper {
+  max-height: 260px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.chart-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.chart-table thead {
+  position: sticky;
+  top: 0;
+  background-color: var(--bg);
+}
+
+.chart-table th,
+.chart-table td {
+  padding: 10px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.chart-table th {
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+}
+
+.chart-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.chart-table tbody tr:hover {
+  background-color: var(--bg);
+}
+
+/* =============== EMPTY STATE =============== */
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* =============== PLACEHOLDER =============== */
 .placeholder-page {
   text-align: center;

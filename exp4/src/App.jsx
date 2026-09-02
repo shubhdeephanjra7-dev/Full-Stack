@@ -4,6 +4,8 @@ import Sidebar from './components/Sidebar'
 import Header from './components/Header'
 import Dashboard from './pages/Dashboard'
 import CalendarPage from './pages/CalendarPage'
+import PostsPage from './pages/PostsPage'
+import AnalyticsPage from './pages/AnalyticsPage'
 import PostModal from './components/PostModal'
 import Toast from './components/Toast'
 import {
@@ -71,15 +73,6 @@ function App() {
     dispatch(clearToast())
   }, [dispatch])
 
-  const renderPlaceholder = (title) => (
-    <div className="placeholder-page card">
-      <h2 className="page-title">{title}</h2>
-      <p className="text-muted">
-        This page is a placeholder. Calendar and Dashboard are fully functional.
-      </p>
-    </div>
-  )
-
   const renderPage = () => {
     switch (activePage) {
       case 'dashboard':
@@ -93,11 +86,11 @@ function App() {
           />
         )
       case 'posts':
-        return renderPlaceholder('Posts')
+        return <PostsPage />
       case 'analytics':
-        return renderPlaceholder('Analytics')
+        return <AnalyticsPage />
       default:
-        return renderPlaceholder('Dashboard')
+        return <Dashboard onNavigateToCalendar={() => setActivePage('calendar')} />
     }
   }
 
