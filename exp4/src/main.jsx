@@ -1,14 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { Provider } from 'react-redux'
-import App from './App.jsx'
-import store from './redux/store.js'
-import './index.css'
+import { createRoot } from 'react-dom/client';
+import App from './App.jsx';
+import './index.css';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
-)
+// Note: intentionally NOT wrapped in <StrictMode>. StrictMode double-invokes
+// renders/effects in development specifically to surface side-effect bugs,
+// which would double every number the render counter reports and make the
+// optimized-vs-non-optimized demonstration (2 vs 7/30) inaccurate. The rest
+// of the app has no StrictMode-only concerns, so it's safe to omit here.
+createRoot(document.getElementById('root')).render(<App />);
